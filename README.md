@@ -47,12 +47,12 @@ These scripts also assume that your $HOME directory is the same path on all Data
 ### Clone the Impala TPC-DS tools repo & Configure the HDFS directories
 
 * `cd $HOME` (use your `$HOME` directory as it's hard coded in some scripts for now)
-* clone this repo `git clone https://github.com/cloudera/impala-tpcds-kit`
+* clone this repo `git clone https://github.com/isamllr/impala-tpcds-kit`
 * `cd impala-tpcds-kit`
 * Edit `tpcds-env.sh` and modify as needed.  The defaults assume you have a `/user/$USER` directory in HDFS.  If you don't, run these commands:
-  * `sudo -u hdfs hdfs dfs -mkdir /user/$USER`
-  * `sudo -u hdfs hdfs dfs -chown $USER /user/$USER`
-  * `sudo -u hdfs hdfs dfs -chmod 777 /user/$USER`
+  * `sudo -u hdfs hdfs dfs -mkdir adl://clouderaoncentos.azuredatalakestore.net/$USER/`
+  * `sudo -u hdfs hdfs dfs -chown $USER adl://clouderaoncentos.azuredatalakestore.net/$USER/`
+  * `sudo -u hdfs hdfs dfs -chmod 777 adl://clouderaoncentos.azuredatalakestore.net/$USER/`
 * Edit `dn.txt` and put one DataNode hostname per line - no blank lines.
 * Run `push-bits.sh` which will scp `tpcds-kit` and `impala-tpcds-kit` to each DataNode listed in `dn.txt`.
 * Run `set-nodenum.sh`.  This will create `impala-tpcds-kit/nodenum.sh` on every DataNode and set the value accordingly.  This is used to determine what portion of the distributed data generation is done on each node.
