@@ -49,9 +49,9 @@ These scripts also assume that your $HOME directory is the same path on all Data
 * `cd $HOME` (use your `$HOME` directory as it's hard coded in some scripts for now)
 * clone this repo `git clone https://github.com/isamllr/impala-tpcds-kit`
 * `cd impala-tpcds-kit`
-* Edit `tpcds-env.sh` and modify as needed.  The defaults assume you have a `/user/$USER` directory in HDFS.  If you don't, run these commands:
+* Edit `tpcds-env.sh` and modify as needed.  The defaults assume you have a `/user/$USER` directory in HDFS. If you don't and do not use Azure Data Lake Store (access to ADLS is granted using a Service account and Hadoop config - see https://www.cloudera.com/documentation/enterprise/latest/topics/impala_adls.html), run these commands:
   * `sudo -u hdfs hdfs dfs -mkdir adl://clouderaoncentos.azuredatalakestore.net/$USER/`
-  * `sudo -u hdfs hdfs dfs -chown $USER adl://clouderaoncentos.azuredatalakestore.net/$USER/`
+  * (`sudo -u hdfs hdfs dfs -chown $USER adl://clouderaoncentos.azuredatalakestore.net/$USER/`)
   * `sudo -u hdfs hdfs dfs -chmod 777 adl://clouderaoncentos.azuredatalakestore.net/$USER/`
 * Edit `dn.txt` and put one DataNode hostname per line - no blank lines.
 * Run `push-bits.sh` which will scp `tpcds-kit` and `impala-tpcds-kit` to each DataNode listed in `dn.txt`.
