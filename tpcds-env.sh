@@ -4,7 +4,7 @@ export TPCDS_ROOT=$HOME/tpcds-kit
 # top level directory for flat files in HDFS
 #export FLATFILE_HDFS_ROOT=/user/${USER}/tpcds
 #Adjust to use Azure Data Lake
-export FLATFILE_HDFS_ROOT=adl://clouderaoncentos.azuredatalakestore.net/tpcds/
+export FLATFILE_HDFS_ROOT=adl://clouderaoncentos.azuredatalakestore.net/${USER}/tpcds/
 
 # scale factor in GB
 # SF 3000 yields ~1TB for the store_sales table
