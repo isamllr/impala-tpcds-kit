@@ -14,3 +14,5 @@ cdhadlsperfw1-dn12.centralus.cloudapp.azure.com
 cdhadlsperfw1-dn13.centralus.cloudapp.azure.com
 cdhadlsperfw1-dn14.centralus.cloudapp.azure.com
 cdhadlsperfw1-dn15.centralus.cloudapp.azure.com
+cdhadlsperfw1-dn16.centralus.cloudapp.azure.com
+cdhadlsperfw1-dn17.centralus.cloudapp.azure.com
