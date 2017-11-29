@@ -68,6 +68,9 @@ Data is landed directly in HDFS so there is no requirement for any local storage
 ## Data Loading
 
 ### Impala Steps
+
+Make sure to run these from a data node.
+
 * `impala-create-external-tables.sh` - Creates a Hive database and the external tables pointing to flat files.
 * `impala-load-dims.sh` - Load dimension tables (no format specified, modify as necessary, but not required).
 * `impala-load-store_sales.sh` - Load STORE_SALES table which uses dynamic partitioning, one partition per calendar day.
