@@ -11,8 +11,9 @@ export TPCDS_SCALE_FACTOR=3000
 # this is used to determine the number of dsdgen processes to generate data
 # usually set to one per physical CPU core
 # example - 20 nodes @ 12 threads each
-export DSDGEN_NODES=20
-export DSDGEN_THREADS_PER_NODE=12
+export DSDGEN_NODES=18
+# For DS15v2 with 20 cores: Use 19 threads, one left for machine
+export DSDGEN_THREADS_PER_NODE=19 
 export DSDGEN_TOTAL_THREADS=$((DSDGEN_NODES * DSDGEN_THREADS_PER_NODE))
 
 # the name for the tpcds database
