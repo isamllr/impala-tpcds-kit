@@ -2,7 +2,8 @@
 source tpcds-env.sh
 
 # impala-shell -q "create database $TPCDS_DBNAME;"
-impala-shell -q "create database $TPCDS_DBNAME location 'adl://adlane.azuredatalakestore.net/azureuser/tpcds/tpcds_parquet.db';"
+#Make sure to edit path to ADLA prior running
+impala-shell -q "create database $TPCDS_DBNAME location 'adl://adlane.azuredatalakestore.net/$USER/tpcds/tpcds_parquet.db';"
 
 impala-shell -d $TPCDS_DBNAME <<EOF
 create external table et_store_sales
