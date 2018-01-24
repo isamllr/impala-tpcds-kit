@@ -6,7 +6,7 @@ export TPCDS_ROOT=$HOME/tpcds-kit
 #Adjust to use Azure Data Lake
 #export FLATFILE_HDFS_ROOT=adl://adlane.azuredatalakestore.net/${USER}/tpcds
 #Use external blob storage according to https://blogs.msdn.microsoft.com/pliu/2016/06/19/backup-cloudera-data-to-azure-storage/
-export FLATFILE_HDFS_ROOT=wasb://cloudera@limitlesstestaccount1.blob.core.windows.net/${USER}/tpcds/
+export FLATFILE_HDFS_ROOT=wasb://cloudera@limitlesstestaccount1.blob.core.windows.net/azureuser/tpcds
 
 # scale factor in GB
 # SF 3000 yields ~1TB for the store_sales table
