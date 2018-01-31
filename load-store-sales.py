@@ -22,7 +22,7 @@ def get_mem_limit():
   content = urllib.urlopen("http://{0}:25000/varz?raw".format(IMPALAD)).read()
   # memz has the mem limit in bytes
   #temporary fix since this calue can't be read - hardcoded number for DS32v3 128 GB:, 140 for ds15v2
-  mem_limit_gb = 140
+  mem_limit_gb = 112
   #mem_limit_gb = float(re.findall('--mem_limit=(\d+)', content)[0])/(1024**3)  
   return mem_limit_gb
 
